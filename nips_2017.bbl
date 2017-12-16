@@ -1,0 +1,112 @@
+\begin{thebibliography}{2}
+
+\bibitem{Goodfellow:2014td}
+Ian~J Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley,
+  Sherjil Ozair, Aaron~C Courville, and Yoshua Bengio.
+\newblock {Generative Adversarial Nets.}
+\newblock {\em NIPS}, 2014.
+
+\bibitem{Allen:1987td}
+Allen, Jonathan; Hunnicutt, M. Sharon; Klatt, Dennis.
+\newblock {From Text to Speech: The MITalk system.}
+\newblock {\em Cambirdge University Press}, 1987.
+
+\bibitem{Jont:1977td}
+Jont B. Allen.
+\newblock {Short Time Spectral Analysis, Synthesis, and Modification by Discrete Fourier Transform.}
+\newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing}, 1977.
+
+\bibitem{Mermelstein:1976td}
+P.Mermelstein.
+\newblock {Distance measures for speech recognition, psychological and instrumental.}
+\newblock {\em Pattern Recognition and Artificial Intelligence}, 1976.
+
+\bibitem{Vallabhu:2012td}
+H Vallabhu, RV satyanarayana.
+\newblock {Biometric authentication as a service on cloud: Novel solution.}
+\newblock {\em International Journal of Soft Computing and Enginerring}, 2012.
+
+\bibitem{Deng:2010td}
+L.Deng, M.Seltzer, D.Yu, A.Acero, A.mohamed, G.Hinton.
+\newblock {Binary Coding of Speech Spectrograms Using a Deep Auto-encoder.}
+\newblock {\em International Symposium on Computer Architecture}, 2010.
+
+\bibitem{Lior:2015td}
+Lior Uzan, Lior Wolf.
+\newblock {I Know That Voice: Identifying the Voice Actor Behind the Voice.}
+\newblock {\em IEEE International Conference on Biometrics}, 2015.
+
+\bibitem{Lifa:2016td}
+Lifa Sun, Kun Li, Hao Wang, Shiyin Kang, Helen Meng
+\newblock {Phonetic posteriorgrams for many-to-one voice conversion without parallel data training}, 2016.
+
+\bibitem {Kaiming:2015td}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun.
+\newblock {Delving Deep into Rectifiers:
+Surpassing Human-Level Performance on ImageNet Classification}, 2015.
+
+
+\bibitem{Ossama:2014td}
+Ossama Abdel-Hamid, Abdel-rahman Mohamed, Hui Jiang, Li Deng, Gerald Penn, and Dong Yu.
+\newblock {Convolutional Neural Networks, for Speech Recognition.}
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing}, 2014.
+
+\bibitem{Taeksoo:2017td}
+Taeksoo Kim, Moonsu Cha, Hyunsoo Kim, Jung Kwon Lee, Jiwon Kim.
+\newblock {Learning to Discover Cross-Domain Relations with Generative Adversarial Networks}, 2017.
+
+\bibitem{Sercan:2017td}
+Sercan O. Arik, Mike Chranowski, Adam Coates, Gregory Diamos, Andrew Gibiansky.
+\newblock {Deep Voice: Real-time Neural Text-to-Speech}, 2017.
+
+\bibitem{Siri:2017td}
+Siri Team.
+\newblock {Deep Learning for Siri's Voice: On-device Deep Mixture Density Networks for Hybrid Unit Selection Synthesis}, 2017.
+
+\bibitem{Yuxuan:2017td}
+Yuxuan Wang, RJ Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J. Weiss, Navdeep Jaitly.
+\newblock {Tacotron: Towards End-to-End Speech Synthesis}, 2017.
+
+\bibitem{Aaron:2016td}
+Aaron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals.
+\newblock {Wavenet : A Generative Model for Raw Audio}, 2016.
+
+\bibitem{Alec:2016td}
+Alec Radford, Luke Metz, Soumith Chintala.
+\newblock {Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks}
+\newblock {\em International Conference on Learning Representations}, 2016.
+
+\bibitem{Chris:2017td}
+Chris Donahue, Zachary C. Lipton, Julian McAuley.
+\newblock {Dance Dance Convolution}, 2017.
+
+\bibitem{Elias:2016td}
+Elias Sprengel, Martin Jaggi, Yannic Kilcher, and Thomas Hofmann.
+\newblock {Audio Based Bird Species Identification using Deep Learning Techniques}, 2016.
+
+\bibitem{Lonce:2017td}
+Lonce Wyse.
+\newblock {Audio Spectrogram Representations for Processing with Convolutional Neural Networks}, 2016.
+
+\bibitem{Daniel:1984td}
+Daniel W. Griffin Jae S. LIM.
+\newblock {Signal Estimation from Modified Short-Time Fourier Transform}
+\newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing}, 1984.
+
+\bibitem{Praat:praattd}
+{http://www.fon.hum.uva.nl/paul/praat.html}
+
+\bibitem{Librosa:librosatd}
+{http://conference.scipy.org/proceedings/scipy2015/pdfs/brian\textunderscore mcfee.pdf}
+
+\bibitem{Numpy:numpytd}
+{https://www.scipy.org/citing.html}
+
+\bibitem{Pytorch:pytorchtd}
+{https://discuss.pytorch.org/t/cite-the-pytorch-as-a-reference/1021}	
+
+\bibitem{LR:slrtd}
+{http://www.openslr.org/12/}
+
+
+\end{thebibliography}
