@@ -97,8 +97,8 @@
 
 \maketitle
 \begin{abstract}
-Here, our project aims to synthesize someone's voice singing a song, using Generative Adversarial Network(cite) in short, GAN.
-There is an ongoing research about speech synthesis. The majority of the work have been done in the area of Text-to-Speech(TTS)(cite) where it takes text as an input and produces speech as an output. The limitation of TTS we think is that even though it is posssible to reproduce someone's voice, it is hard to capture the features that are the key components in singing such as voice tone, voice pitch, and voice tempo.It is hard to put those voice features in TTS model as an input, as well as make model to learn those features. Another difficulty is that we can't simply earn such feature-labled data.
+Our project aims to synthesize someone's voice singing a song, using Generative Adversarial Network in short, GAN.
+There is an ongoing research about speech synthesis. The majority of the work have been done in the area of Text-to-Speech(TTS) where it takes text as an input and produces speech as an output. The limitation of TTS we think is that even though it is posssible to reproduce someone's voice, it is hard to capture the features that are the key components in singing such as voice tone, voice pitch, and voice tempo.It is hard to put those voice features in TTS model as an input, as well as make model to learn those features. Another difficulty is that we can't simply earn such feature-labled data.
 The data we use to learn our model is unpaired data. It is very infeasible to get the data of Trump's singing voice or the data of speaking exactly the same thing that Trump says.
 Cycle-GAN, current state-of-art GAN, make it possible to convert between unpaired data. Thus we use Cycle-GAN's approach in our voice conversion model. 
 
