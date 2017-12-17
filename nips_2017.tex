@@ -44,7 +44,7 @@
 \usepackage{nicefrac}% compact symbols for 1/2, etc.
 \usepackage{microtype}% microtypography
 
-\title{President Sings - Voice Synthesis Using Generative Adversarial Network}
+\title{President Sings - Voice Conversion Using Generative Adversarial Network}
 
 % The \author macro works with any number of authors. There are two
 % commands used to separate the names and addresses of multiple
@@ -121,7 +121,7 @@ For our future work, we can think of the way to input the voice singing a song w
 
 \section{Data Sets}
 
-We collected audio data on Youtube and SLR data sets. and we preprocess those data to make 10 hours spectrogram. We cut the audio data into three seconds time frame and do STFT that frame. Here the sampling rate is 51200Hz, and the channel is mono. With STFT configuration we followed Praat(paper), n\textunderscore fft to 2048, hop\textunderscore length to 256, window\textunderscore length to 1024.
+We collected audio data on Youtube and SLR data sets. and we preprocess those data to make 10 hours spectrogram. We cut the audio data into three seconds time frame and do STFT that frame. Here the sampling rate is 51200Hz, and the channel is mono. With STFT configuration we followed Praat\cite{Praat:2017td}, n\textunderscore fft to 2048, hop\textunderscore length to 256, window\textunderscore length to 1024.
 
 We normalized our spectrogram. To reflect sparseness, we calculate the mean and variance of data larger than 1. Here we appied idea of multiplying 2 to variance\cite{Kaiming:2015td}
 
@@ -222,6 +222,90 @@ Current model can only reconstruct the given input spectrogram. The reason that 
 Also, the noise is a big problem. The reason noise happens is that in original spectrogram, there are zero values that represents empty sound, but in our reconstructed spectrogram, there are no zero values, only near-zero values, which makes noise.
 
 \section{Evaluation}
+
+In training phase, we proceed with 12288 spectrogram, learning rate of 1e-4, 10 epcoch and batch size of 32. The number of Trump's voice spectrogram is around 2200. 
+
+Currently, conversion is not working properly and we can't define ground truth exactly, we couldn't conduct exact experiment. Instead, we focused on loss. Below are the graphs of loss for three cases.
+
+\begin{figure}[!htb]
+  \minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{loss_graph/ae_loss_plot}
+  \caption{autoencoder loss}
+  \endminipage\hfill
+  \minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{loss_graph/ae_target_loss_plot}
+  \caption{autoencoder + target}
+  \endminipage\hfill  
+  \minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{loss_graph/ae_target_gan_loss_plot}
+  \caption{AE + target + GAN}
+  \endminipage\hfill
+\end{figure}
+
+Autoencoder's reconstruction loss and latent vector's cycle loss diminished well, but loss of discriminator heavily fluctuated. This is the reason voice conversion failed.
+
+Also, autoencoder's loss did not converge perfectly, so if we increased epoch, the loss may have decreased more.
+
+For the spectrogram, we chose 3 audio, one is speech without background music, next one is humming with small background music, last one is singing song with loud background music. If we look these spectrograms, we can see that the capability of model to reconstruct and change the target audio, as well as tell apart background music and voice sound. We used Praat to plot the spectrograms and the result of FFT.
+
+\subsection{Autoencoder}
+
+\begin{figure}[!htb]
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_loss/spectro_original_speech}
+  \caption{original speech}
+  \endminipage\hfill
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_loss/spectro_reconstruct_speech}
+  \caption{reconstructed speech}
+  \endminipage\hfill
+\end{figure}
+
+If you compare figure 4 and 5, it seems that the spectrogram is reconstructed well, but it didn't emphasize the part that has to be, or the other way around.
+
+\begin{figure}[!htb]
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_loss/fft_original_yee}
+  \caption{original humming}
+  \endminipage\hfill
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_loss/fft_reconstruct_yee}
+  \caption{reconstructed humming}
+  \endminipage\hfill
+\end{figure}
+
+
+If you look at the result of FFT(figure 6,7), amplitude suddelny drops at the cropped boundary. This means that the model can't discriminate zero values and non-zero values. Also, there is a problem with normalization cropping and reconstructing.
+
+\subsection{Entire model} 
+
+\begin{figure}[!htb]
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_original_speech}
+  \caption{original singing}
+  \endminipage\hfill
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_reconstruct_speech}
+  \caption{reconstructed singing}
+  \endminipage\hfill
+\end{figure}
+
+
+Figure 8, 9 shows that the conversion didn't work properly. But compared to 1), reconstruction worked well, but here again, There is no emphasis, only filled with mean value.
+
+\begin{figure}[!htb]
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/fft_original_speech}
+  \caption{original speech}
+  \endminipage\hfill
+  \minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/fft_reconstruct_speech}
+  \caption{reconstructed speech}
+  \endminipage\hfill
+\end{figure}
+
+
+Figure 10, 11 shows that the noise ratio is smaller compared to 1).
 
 \section{Future Work}
 
