@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.31)  17 DEC 2017 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.31)  17 DEC 2017 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,31 +915,26 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package natbib Warning: Citation `Praat:2017td' on page 2 undefined on input li
-ne 124.
-
-[2] [3] [4]
-Overfull \hbox (60.0802pt too wide) detected at line 212
-\OML/cmm/m/it/10 L[]iscriminator\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Enc; DecT; Di
-s; x; y\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
-Dis\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 DecT\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Enc\
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ))))[0]\OML/cmm/m/it/10 ; \OT
-1/cmr/m/n/10 0) + \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Dis\OT1/c
-mr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[0]\OML/cmm/m/it/10 ; \OT1/cmr/m/
-n/10 1) + \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Dis\OT1/cmr/m/n/1
-0 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[1]\OML/cmm/m/it/10 ; y\OT1/cmr/m/n/10 )
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Overfull \hbox (49.66188pt too wide) detected at line 212
+\OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Enc; DecT; Dis; x; y\OT1/
+cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Dis\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 DecT\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Enc\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ))))[0]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 0) + \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Dis\OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[0]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1) + \O
+ML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Dis\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 x\OT1/cmr/m/n/10 )[1]\OML/cmm/m/it/10 ; y\OT1/cmr/m/n/10 )
  []
 
-<loss_graph/ae_loss_plot.pdf, id=64, 578.16pt x 361.35pt>
+<loss_graph/ae_loss_plot.pdf, id=66, 578.16pt x 361.35pt>
 File: loss_graph/ae_loss_plot.pdf Graphic file (type pdf)
 
 <use loss_graph/ae_loss_plot.pdf>
 Package pdftex.def Info: loss_graph/ae_loss_plot.pdf used on input line 232.
 (pdftex.def)             Requested size: 127.1981pt x 79.49724pt.
 
-<loss_graph/ae_target_loss_plot.pdf, id=65, 578.16pt x 361.35pt>
+<loss_graph/ae_target_loss_plot.pdf, id=67, 578.16pt x 361.35pt>
 File: loss_graph/ae_target_loss_plot.pdf Graphic file (type pdf)
 
 <use loss_graph/ae_target_loss_plot.pdf>
@@ -947,7 +942,7 @@ Package pdftex.def Info: loss_graph/ae_target_loss_plot.pdf used on input line
 236.
 (pdftex.def)             Requested size: 127.1981pt x 79.49724pt.
 
-<loss_graph/ae_target_gan_loss_plot.pdf, id=66, 578.16pt x 361.35pt>
+<loss_graph/ae_target_gan_loss_plot.pdf, id=68, 578.16pt x 361.35pt>
 File: loss_graph/ae_target_gan_loss_plot.pdf Graphic file (type pdf)
 
 <use loss_graph/ae_target_gan_loss_plot.pdf>
@@ -955,7 +950,7 @@ Package pdftex.def Info: loss_graph/ae_target_gan_loss_plot.pdf used on input l
 ine 240.
 (pdftex.def)             Requested size: 127.1981pt x 79.49724pt.
 
-<figures/ae_loss/spectro_original_speech.png, id=67, 433.62pt x 289.08pt>
+<figures/ae_loss/spectro_original_speech.png, id=69, 433.62pt x 289.08pt>
 File: figures/ae_loss/spectro_original_speech.png Graphic file (type png)
 
 <use figures/ae_loss/spectro_original_speech.png>
@@ -963,7 +958,7 @@ Package pdftex.def Info: figures/ae_loss/spectro_original_speech.png used on in
 put line 255.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_loss/spectro_reconstruct_speech.png, id=69, 433.62pt x 289.08pt>
+<figures/ae_loss/spectro_reconstruct_speech.png, id=71, 433.62pt x 289.08pt>
 File: figures/ae_loss/spectro_reconstruct_speech.png Graphic file (type png)
 
 <use figures/ae_loss/spectro_reconstruct_speech.png>
@@ -971,7 +966,7 @@ Package pdftex.def Info: figures/ae_loss/spectro_reconstruct_speech.png used on
  input line 259.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_loss/fft_original_yee.png, id=70, 433.62pt x 289.08pt>
+<figures/ae_loss/fft_original_yee.png, id=72, 433.62pt x 289.08pt>
 File: figures/ae_loss/fft_original_yee.png Graphic file (type png)
 
 <use figures/ae_loss/fft_original_yee.png>
@@ -979,7 +974,7 @@ Package pdftex.def Info: figures/ae_loss/fft_original_yee.png used on input lin
 e 268.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_loss/fft_reconstruct_yee.png, id=71, 433.62pt x 289.08pt>
+<figures/ae_loss/fft_reconstruct_yee.png, id=73, 433.62pt x 289.08pt>
 File: figures/ae_loss/fft_reconstruct_yee.png Graphic file (type png)
 
 <use figures/ae_loss/fft_reconstruct_yee.png>
@@ -995,25 +990,25 @@ sion: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./loss_graph/ae_target_gan_loss_plot.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
 >]
-<figures/ae_target_gan_loss/spectro_original_speech.png, id=251, 433.62pt x 289
-.08pt>
-File: figures/ae_target_gan_loss/spectro_original_speech.png Graphic file (type
- png)
- <use figures/ae_target_gan_loss/spectro_original_speech.png>
-Package pdftex.def Info: figures/ae_target_gan_loss/spectro_original_speech.png
- used on input line 284.
+<figures/ae_target_gan_loss/spectro_original_jfla.png, id=253, 433.62pt x 289.0
+8pt>
+File: figures/ae_target_gan_loss/spectro_original_jfla.png Graphic file (type p
+ng)
+ <use figures/ae_target_gan_loss/spectro_original_jfla.png>
+Package pdftex.def Info: figures/ae_target_gan_loss/spectro_original_jfla.png u
+sed on input line 284.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_target_gan_loss/spectro_reconstruct_speech.png, id=252, 433.62pt x 
-289.08pt>
-File: figures/ae_target_gan_loss/spectro_reconstruct_speech.png Graphic file (t
-ype png)
- <use figures/ae_target_gan_loss/spectro_reconstruct_speech.png>
-Package pdftex.def Info: figures/ae_target_gan_loss/spectro_reconstruct_speech.
-png used on input line 288.
+<figures/ae_target_gan_loss/spectro_reconstruct_jfla.png, id=254, 433.62pt x 28
+9.08pt>
+File: figures/ae_target_gan_loss/spectro_reconstruct_jfla.png Graphic file (typ
+e png)
+ <use figures/ae_target_gan_loss/spectro_reconstruct_jfla.png>
+Package pdftex.def Info: figures/ae_target_gan_loss/spectro_reconstruct_jfla.pn
+g used on input line 288.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_target_gan_loss/fft_original_speech.png, id=253, 433.62pt x 289.08p
+<figures/ae_target_gan_loss/fft_original_speech.png, id=255, 433.62pt x 289.08p
 t>
 File: figures/ae_target_gan_loss/fft_original_speech.png Graphic file (type png
 )
@@ -1022,7 +1017,7 @@ Package pdftex.def Info: figures/ae_target_gan_loss/fft_original_speech.png use
 d on input line 298.
 (pdftex.def)             Requested size: 198.7425pt x 132.4976pt.
 
-<figures/ae_target_gan_loss/fft_reconstruct_speech.png, id=254, 433.62pt x 289.
+<figures/ae_target_gan_loss/fft_reconstruct_speech.png, id=256, 433.62pt x 289.
 08pt>
 File: figures/ae_target_gan_loss/fft_reconstruct_speech.png Graphic file (type 
 png)
@@ -1035,33 +1030,25 @@ Underfull \vbox (badness 6428) has occurred while \output is active []
 
  [6 <./figures/ae_loss/spectro_original_speech.png> <./figures/ae_loss/spectro_
 reconstruct_speech.png> <./figures/ae_loss/fft_original_yee.png> <./figures/ae_
-loss/fft_reconstruct_yee.png> <./figures/ae_target_gan_loss/spectro_original_sp
-eech.png> <./figures/ae_target_gan_loss/spectro_reconstruct_speech.png>] (./nip
-s_2017.bbl
+loss/fft_reconstruct_yee.png> <./figures/ae_target_gan_loss/spectro_original_jf
+la.png> <./figures/ae_target_gan_loss/spectro_reconstruct_jfla.png>] (./nips_20
+17.bbl
 [7 <./figures/ae_target_gan_loss/fft_original_speech.png> <./figures/ae_target_
 gan_loss/fft_reconstruct_speech.png>])
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
-[8]
+ [8]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
- (./nips_2017.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./nips_2017.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 345.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
  ) 
 Here is how much of TeX's memory you used:
- 13390 strings out of 494953
- 199099 string characters out of 6180976
- 302406 words of memory out of 5000000
- 16256 multiletter control sequences out of 15000+600000
- 43104 words of font info for 172 fonts, out of 8000000 for 9000
+ 13387 strings out of 494953
+ 199008 string characters out of 6180976
+ 303390 words of memory out of 5000000
+ 16252 multiletter control sequences out of 15000+600000
+ 43199 words of font info for 172 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,8n,96p,1304b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/mjk/.texmf
@@ -1073,10 +1060,10 @@ msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on nips_2017.pdf (8 pages, 20236938 bytes).
+Output written on nips_2017.pdf (8 pages, 20567781 bytes).
 PDF statistics:
  367 PDF objects out of 1000 (max. 8388607)
  184 compressed objects within 2 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 57 named destinations out of 1000 (max. 500000)
  20536 words of extra memory for PDF output out of 20736 (max. 10000000)
 

@@ -111,9 +111,9 @@ A few months ago, a video titled "Barack Obama Singing Shape of You" had been up
 
 There is an ongoing research about speech synthesis. The majority of the work have been done in the area of Text-to-Speech(TTS)\cite{Allen:1987td} where it takes text as an input and produces speech as an output. The limitation of TTS we think is that even though it is posssible to reproduce someone's voice, it is hard to capture the features that are the key components in singing such as voice tone, voice pitch, and voice tempo. In TTS, the model learns the matching between each phoneme and target voice with a certain feature combination, while in singing a song, same phonemes may have different voice features. Thus, we plan to design our model as Speech-to-Speech(STS), where it takes speech as an input and produces speech as an output. Although this approach is uncommon, we try to build STS model using GAN.
 
-To train our model, large amounts of voice data(perhaps 2\textasciitilde10 hours) have to be collected. These voice data, whether they are target voice or not is not matter because we both have to collect true label data and false label data. We then preprocess the sound data to make a training set because dealing with raw sound data is complicated thing. There are two ways to preprocess sound data. One is Short-Time Fourier Transformation(STFT)\cite{Jont:1977td} and the other is Mel-Frequency Cepstral Coefficeints(MFCCs)\cite{Mermelstein:1976td}. We have not decided which method we will use yet. Our GAN model, has two internal models. One is Generator model, which takes our preprocessed data as an input and produces target voice as an output. The other is Discriminator model, which takes voice data as an input and outputs true, if the input resembles the target voice, or false, if the input does not sound like the target voice.
+To train our model, large amounts of voice data(perhaps 2\textasciitilde10 hours) have to be collected. These voice data, whether they are target voice or not is not matter because we both have to collect true label data and false label data. We then preprocess the sound data to make a training set because dealing with raw sound data is complicated thing. We used Short-Time Fourier Transformation(STFT)\cite{Jont:1977td} to preprocess the data. Our model, has three internal models. One is Autoencoder, which makes latent vector for the audio. Next one is Generator model, which takes our preprocessed data as an input and produces target voice as an output. Last one is Discriminator model, which takes voice data as an input and outputs true, if the input resembles the target voice, or false, if the input does not sound like the target voice.
    
-Our novel technique can be utilizied in synthesizing voice of celebrities who are alive and also who passed away, so that the fan of those celebrities can enjoy their voice singing new, contemporary songs even after they are dead.
+Our novel technique can be utilizied in converting voice of celebrities who are alive and also who passed away, so that the fan of those celebrities can enjoy their voice singing new, contemporary songs even after they are dead.
 
 Before beginning our project, we have two major concerns. One is that what if we cannot sufficiently extract the features that consist of singing voice. If we cannot extract the features well enough, the quality of the output will be poor and the output will not resemble the target voice. The other is that our technique can be manipulated by those who want to break the biometric voice authentication system\cite{Vallabhu:2012td}. Biometric voice authentication system uses a client's voice to authenticate whether the given voice is vaild. Although it is not common to use voice recognition technique in traditional authentication area, if that kind of voice authentication applications prevail in the near future, the chance for the intentional attacker to maliciously exploit our technique to break in those applications also goes up.
 
@@ -121,7 +121,7 @@ For our future work, we can think of the way to input the voice singing a song w
 
 \section{Data Sets}
 
-We collected audio data on Youtube and SLR data sets. and we preprocess those data to make 10 hours spectrogram. We cut the audio data into three seconds time frame and do STFT that frame. Here the sampling rate is 51200Hz, and the channel is mono. With STFT configuration we followed Praat\cite{Praat:2017td}, n\textunderscore fft to 2048, hop\textunderscore length to 256, window\textunderscore length to 1024.
+We collected audio data on Youtube and SLR\cite{SLR:2015td} data sets. and we preprocess those data to make 10 hours spectrogram. We cut the audio data into three seconds time frame and do STFT that frame. Here the sampling rate is 51200Hz, and the channel is mono. With STFT configuration we followed Praat\cite{Praat:2017td}, n\textunderscore fft to 2048, hop\textunderscore length to 256, window\textunderscore length to 1024.
 
 We normalized our spectrogram. To reflect sparseness, we calculate the mean and variance of data larger than 1. Here we appied idea of multiplying 2 to variance\cite{Kaiming:2015td}
 
@@ -147,7 +147,7 @@ Our model also uses magnitude of complex numbers. In this case, the phase inform
 
 We assume that in spectrogram, we can extract voice features(pitch, tempo, formant, intonation ...)
 
-Especially, the pronounciation of vowel is represented by formant in spectrogram. Formant is a band parallel to time axis in spectrogram. The differenc between the first formant in lowest frequency and the second formant in next lowest frequency tells that the given audio frame represents which vowel. In case of consonant, a band parallel to frequency axis in spectrogram represents consonant information.
+Especially, the pronounciation of vowel is represented by formant in spectrogram. Formant is a band parallel to time axis in spectrogram. The difference between the first formant in lowest frequency and the second formant in next lowest frequency tells that the given audio frame represents which vowel. In case of consonant, a band parallel to frequency axis in spectrogram represents consonant information.
 
 Pitch is represented by frequency. difference between interval and pitch is that interval is the relative difference while pitch is the absoulte value represented by hertz(Hz). Same pronounciation with different pitch represented by the parallel transference of formant with respect to frequency axis. Intonation is change of pitch.
 
@@ -177,11 +177,11 @@ Our model has three parts, autoencoder, generator, and discriminator.
 
 Current structure of autoencoder is very simple. We have encoder and decoder to make result have same shape with input.
 
-Structure of the encoder is as follows.
+Structure of the encoder(denoted by Enc) is as follows.
 
 Conv(3*3, stride 1, 16ch) – batchnorm – relu – conv(5*5, stride3, 32ch) – batchnorm relu – conv(1*1, stride1, 1ch)
 
-Structure of the decoder is as follows.
+Structure of the decoder(denoted by DecR) is as follows.
 
 Deconv(5*5, stride3, 32ch) – batchnorm – relu or leakyrelu 0.05 – deconv(3*3, stride1, 16ch) – batchnorm – relu or leakyrelu 0.05 - deconv(1*1, stride1, 1ch)
 
@@ -189,27 +189,27 @@ The latent vector between encoder and decoder is not like the normal latent vect
 
 Learning of autoencoder utilize pixelwise L1 loss with respect to input spectrogram x and output spectrogram xR,
 
-\[L_Reconstuction (Enc,DecR,x) = \mid\mid x-xR \mid\mid_1 = \mid\mid x-DecR(Enc(x)) \mid\mid_1\]
+\[L_{reconstuction} (Enc,DecR,x) = \mid\mid x-xR \mid\mid_1 = \mid\mid x-DecR(Enc(x)) \mid\mid_1\]
 
 and make this loss minimize.
 
 \subsection{Generator}
 
-Our generator, DecT is same as decoder in autoencoder with different weight. This is because decoder solves harder problem than generator does. Decoder has to reconstruct spectrogram that is same as input spectrogram, while generator only needs to reconstruct spectrogram that represents Trump's voice. This means the range of decoder is larger than the range of generator. Thus if our decoder can reconstruct the given input spectrogram, our generator can generate a spectrogram of Trump's voice.
+Our generator, DecT is same as decoder in autoencoder with different weight. This is because decoder solves harder problem than generator does. DecR has to reconstruct spectrogram that is same as input spectrogram, while generator only needs to reconstruct spectrogram that represents target voice. This means the range of decoder is larger than the range of generator. Thus if our decoder can reconstruct the given input spectrogram, our generator can generate a spectrogram of target voice.
 
 In the meantime, a spectrogram generated by generator can be an unrecognizable by human. That means the voice features are not in the spectrogram. So we need loss function between latent vector of given input spectrogram and the latent vector of generated spectrogram by generator. This is the reason why we introduce the cycle loss,
 
-\[L_cycle (Enc,DecT,x) = \mid\mid Enc(x)-Enc(DecT(Enc(x))) \mid\mid_1\]
+\[L_{cycle} (Enc,DecT,x) = \mid\mid Enc(x)-Enc(DecT(Enc(x))) \mid\mid_1\]
 
 \subsection{Discriminator}
 
-In our model, discriminator does two things. First, like the normal GANs, discriminator judges whether the input is real or fake. Second, discriminator judges whether the input spectrogram is Trump's voice or not. We don't have the labled data of Trump's voice so we add this condition to make generator generate Trump's voice. We followed the discriminator model from these.(two papers) Discriminator works as follows.
+In our model, discriminator does two things. First, like the normal GANs, discriminator judges whether the input is real or fake. Second, discriminator judges whether the input spectrogram is target voice or not. We don't have the labled data of target voice so we add this condition to make generator generate target voice. We followed the discriminator model from these.(two papers) Discriminator works as follows.
 
 conv(11*11, stride4, 96ch) – batchnorm – relu – maxpool(2) – conv(5*5, stride1, 256ch) – batchnorm – relu – maxpool(2) – conv(3*3, stride1, 386ch) – batchnorm – relu – maxpool – conv(3*3, stride1, 256ch) – batchnorm – relu – maxpool – fc(4096) – relu – fc(2) – sigmoid
 
 Output is 2D vector, first column means whether the input spectrogram is real or generated from the generator, second column means whether the input spectrogram represents Trump's voice or not. We calculate cross entropy loss as follows.
 
-\[L_discriminator (Enc,DecT,Dis,x,y)= H(Dis(DecT(Enc(x))))[0],0)+H(Dis(x)[0],1)+H(Dis(x)[1],y)\]
+\[L_{discriminator} (Enc,DecT,Dis,x,y)= H(Dis(DecT(Enc(x))))[0],0)+H(Dis(x)[0],1)+H(Dis(x)[1],y)\]
 
 Here, we don't use second column loss from the generated spectrogram because it is not helpful in the early phase of learning and it can generate totally wrong gradient.
 
@@ -223,7 +223,7 @@ Also, the noise is a big problem. The reason noise happens is that in original s
 
 \section{Evaluation}
 
-In training phase, we proceed with 12288 spectrogram, learning rate of 1e-4, 10 epcoch and batch size of 32. The number of Trump's voice spectrogram is around 2200. 
+In training phase, we proceed with 12288 spectrogram, learning rate of 1e-4, 10 epcoch and batch size of 32. The number of Trump's voice spectrogram is around 2200. We cut front and back part of the audio a little bit to make sure there is no empty sound. 
 
 Currently, conversion is not working properly and we can't define ground truth exactly, we couldn't conduct exact experiment. Instead, we focused on loss. Below are the graphs of loss for three cases.
 
@@ -281,11 +281,11 @@ If you look at the result of FFT(figure 6,7), amplitude suddelny drops at the cr
 
 \begin{figure}[!htb]
   \minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_original_speech}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_original_jfla}
   \caption{original singing}
   \endminipage\hfill
   \minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_reconstruct_speech}
+  \includegraphics[width=\linewidth]{figures/ae_target_gan_loss/spectro_reconstruct_jfla}
   \caption{reconstructed singing}
   \endminipage\hfill
 \end{figure}
